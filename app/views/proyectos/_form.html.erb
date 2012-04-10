@@ -1,0 +1,25 @@
+<%= simple_nested_form_for(@proyecto, :html=>{:class=>'form-horizontal'}) do |f| %>
+  <% if @proyecto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@proyecto.errors.count, "error") %> prohibited this proyecto from being saved:</h2>
+
+      <ul>
+      <% @proyecto.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.input :descripcion %>
+  </div>
+  
+  <%= f.fields_for :charter do |charter_fields|%>
+  	<%= render :partial=>'form_charter', :locals=>{:f => charter_fields} %>
+  <% end %>
+  
+  <div class="actions">
+    <%= f.submit 'Actualizar Proyecto', :class=>'btn btn-primary' %>
+  </div>
+<% end %>

@@ -1,0 +1,40 @@
+<h1><%= @proyecto.charter.proyecto_titulo %> <small>Objetivo del Negocio</small></h1>
+<% if notice%>
+<div class="alert alert-block">
+  <a class="close" data-dismiss="alert">×</a>
+  <p id="notice"><%= notice %></p>
+</div>
+<%end%>
+
+<p>
+  <b>Texto:</b>
+  <%= @objetivo_negocio.texto %>
+</p>
+
+<div class="page-header">
+    <h3>Elementos Estratégicos</h3>
+</div>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Texto</th>
+		</tr>
+	</thead>
+	<tbody>
+	<% @objetivo_negocio.elemento_estrategicos do |e| %>
+		<tr>
+			<td><%= e.texto %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>
+
+<div class="form-actions">
+	<%= link_to 'Regresar', proyecto_objetivo_negocios_path([@proyecto]), :class=>'btn' %>
+	<div class="pull-right">
+		<%= link_to 'Editar', edit_proyecto_objetivo_negocio_path(@proyecto, @objetivo_negocio), :class=>'btn' %>
+		<%= link_to 'Eliminar', proyecto_objetivo_negocio_path(@proyecto, @objetivo_negocio), :class=>'btn btn-danger', :confirm => 'Are you sure?', :method => :delete %>
+	</div>
+</div>
+

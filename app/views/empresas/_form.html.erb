@@ -1,0 +1,13 @@
+<%= simple_form_for(@empresa) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :razon %>
+    <%= f.input :rfc %>
+    <%= f.input :sitioweb %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

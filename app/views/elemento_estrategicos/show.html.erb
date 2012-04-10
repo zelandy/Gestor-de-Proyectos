@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Texto:</b>
+  <%= @elemento_estrategico.texto %>
+</p>
+
+<p>
+  <b>Objetivonegocio:</b>
+  <%= @elemento_estrategico.objetivoNegocio %>
+</p>
+
+
+<%= link_to 'Edit', edit_elemento_estrategico_path(@elemento_estrategico) %> |
+<%= link_to 'Back', elemento_estrategicos_path %>

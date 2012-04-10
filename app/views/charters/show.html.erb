@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Proyecto titulo:</b>
+  <%= @charter.proyecto_titulo %>
+</p>
+
+<p>
+  <b>Proyecto version:</b>
+  <%= @charter.proyecto_version %>
+</p>
+
+<p>
+  <b>Resumen:</b>
+  <%= @charter.resumen %>
+</p>
+
+
+<%= link_to 'Edit', edit_charter_path(@charter) %> |
+<%= link_to 'Back', charters_path %>

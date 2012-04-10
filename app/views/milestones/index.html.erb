@@ -1,0 +1,29 @@
+<h1>Listing milestones</h1>
+
+<table>
+  <tr>
+    <th>Descripcion</th>
+    <th>Fecha inicio</th>
+    <th>Entregable</th>
+    <th>Charter</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @milestones.each do |milestone| %>
+  <tr>
+    <td><%= milestone.descripcion %></td>
+    <td><%= milestone.fecha_inicio %></td>
+    <td><%= milestone.entregable %></td>
+    <td><%= milestone.charter %></td>
+    <td><%= link_to 'Show', milestone %></td>
+    <td><%= link_to 'Edit', edit_milestone_path(milestone) %></td>
+    <td><%= link_to 'Destroy', milestone, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Milestone', new_milestone_path %>

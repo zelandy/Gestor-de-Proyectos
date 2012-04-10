@@ -1,0 +1,36 @@
+<h1>Mis proyectos <small><%= @proyecto.charter.proyecto_titulo %></small></h1>
+<% if notice%>
+<div class="alert alert-block">
+  <a class="close" data-dismiss="alert">×</a>
+  <p id="notice"><%= notice %></p>
+</div>
+<%end%>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @proyecto.descripcion %>
+</p>
+
+<p>
+  <b>Proyecto titulo:</b>
+  <%= @charter.proyecto_titulo %>
+</p>
+
+<p>
+  <b>Proyecto version:</b>
+  <%= @charter.proyecto_version %>
+</p>
+
+<p>
+  <b>Resumen:</b>
+  <%= @charter.resumen %>
+</p>
+
+<div class="form-actions">
+	<%= link_to 'Regresar', proyectos_path, :class=>'btn' %>
+	<div class="pull-right">
+		<%= link_to 'Ver Objetivos', proyecto_objetivo_negocios_path(@proyecto), :class=>'btn' %>
+		<%= link_to 'Editar', edit_proyecto_path(@proyecto), :class=>'btn' %>
+		<%= link_to 'Eliminar', proyecto_path(@proyecto), :class=>'btn btn-danger', :confirm => 'Are you sure?', :method => :delete %>
+	</div>
+</div>

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @stakeholder.user %>
+</p>
+
+<p>
+  <b>Charter:</b>
+  <%= @stakeholder.charter %>
+</p>
+
+<p>
+  <b>Role:</b>
+  <%= @stakeholder.role %>
+</p>
+
+
+<%= link_to 'Edit', edit_stakeholder_path(@stakeholder) %> |
+<%= link_to 'Back', stakeholders_path %>

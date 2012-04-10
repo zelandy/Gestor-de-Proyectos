@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  descripcion: MyString
+  fecha_inicio: 2012-03-26 17:48:54
+  entregable: MyString
+  charter: 
+
+two:
+  descripcion: MyString
+  fecha_inicio: 2012-03-26 17:48:54
+  entregable: MyString
+  charter: 

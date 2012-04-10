@@ -1,0 +1,29 @@
+<%= form_for(@charter) do |f| %>
+  <% if @charter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@charter.errors.count, "error") %> prohibited this charter from being saved:</h2>
+
+      <ul>
+      <% @charter.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :proyecto_titulo %><br />
+    <%= f.text_field :proyecto_titulo %>
+  </div>
+  <div class="field">
+    <%= f.label :proyecto_version %><br />
+    <%= f.text_field :proyecto_version %>
+  </div>
+  <div class="field">
+    <%= f.label :resumen %><br />
+    <%= f.text_area :resumen %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

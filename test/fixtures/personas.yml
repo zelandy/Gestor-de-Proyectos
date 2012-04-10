@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nombre: MyString
+  ap_paterno: MyString
+  ap_materno: MyString
+
+two:
+  nombre: MyString
+  ap_paterno: MyString
+  ap_materno: MyString

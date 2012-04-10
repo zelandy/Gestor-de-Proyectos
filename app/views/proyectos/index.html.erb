@@ -1,0 +1,31 @@
+<h1>Mis Proyectos</h1>
+<%= link_to 'Agregar Proyecto', new_proyecto_path, :class=>'btn btn-primary pull-right' %>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Descripcion</th>
+    <th>Fecha Creación</th>
+  </tr>
+</thead>
+ <tbody>
+<% @proyectos.each do |proyecto| %>
+  <tr>
+    <td><%= link_to proyecto.charter.proyecto_titulo, proyecto %></td>
+    <td><%= proyecto.created_at %></td>
+    <td>
+    	<div class="btn-group pull-right">
+		<%= link_to '#', :class=>"btn dropdown-toggle", :'data-toggle'.to_sym=>"dropdown" do  %>
+		    Acciones
+    		<span class="caret"></span>
+  		<% end %>
+  		<ul class="dropdown-menu">
+    		<li><%= link_to 'Editar', edit_proyecto_path(proyecto) %></li>
+    		<li><%= link_to 'Eliminar', proyecto, :confirm => 'Are you sure?', :method => :delete %></li>
+	 	</ul>
+		</div>
+	</td>
+  </tr>
+<% end %>
+  </tbody>
+</table>

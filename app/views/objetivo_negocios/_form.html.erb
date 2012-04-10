@@ -1,0 +1,30 @@
+<%= nested_form_for([@proyecto, @objetivo_negocio]) do |f| %>
+  <% if @objetivo_negocio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@objetivo_negocio.errors.count, "error") %> prohibited this objetivo_negocio from being saved:</h2>
+
+      <ul>
+      <% @objetivo_negocio.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :texto %><br />
+    <%= f.text_field :texto %>
+  </div>
+  
+  <div class="fields">
+  	<%= f.fields_for :elemento_estrategicos do |elem_form|  %>
+  		<%= elem_form.label :texto %> <%= elem_form.text_field :texto %>
+  		<%= elem_form.link_to_remove "Remove this elemento" %>
+  	<% end %>
+  	<p><%= f.link_to_add "Add a elemento", :elemento_estrategicos %></p>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

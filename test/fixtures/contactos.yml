@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  contactable: 
+  identidad: 
+  email: MyString
+
+two:
+  contactable: 
+  identidad: 
+  email: MyString

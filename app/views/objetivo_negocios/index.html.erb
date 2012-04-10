@@ -1,0 +1,32 @@
+<h1><%= @proyecto.charter.proyecto_titulo %> <small>Objetivos del Negocio</small></h1>
+<p>
+	<%= link_to 'Nuevo Objetivo', new_proyecto_objetivo_negocio_path, :class=>'btn btn-primary pull-right' %>
+</p>
+<table class="table">
+<thead>
+  <tr>
+    <th>Objetivo del Negocio</th>
+  </tr>
+</thead>
+<tbody>
+<% @objetivo_negocios.each do |objetivo_negocio| %>
+  <tr>
+    <td><%= link_to objetivo_negocio.texto, [@proyecto, objetivo_negocio] %></td>
+    <td>
+    	<div class="btn-group pull-right">
+		<%= link_to '#', :class=>"btn dropdown-toggle", :'data-toggle'.to_sym=>"dropdown" do  %>
+		    Acciones
+    		<span class="caret"></span>
+  		<% end %>
+  		<ul class="dropdown-menu">
+    		<li><%= link_to 'Editar', edit_proyecto_objetivo_negocio_path(@proyecto, objetivo_negocio) %></li>
+    		<li><%= link_to 'Eliminar', [@proyecto, objetivo_negocio], :confirm => 'Are you sure?', :method => :delete %></li>
+	 	</ul>
+		</div>
+    </td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
