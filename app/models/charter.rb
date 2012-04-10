@@ -4,4 +4,6 @@ class Charter < ActiveRecord::Base
 	belongs_to :proyecto
 	
 	accepts_nested_attributes_for :stakeholders, :allow_destroy => true
+	
+	
 end
