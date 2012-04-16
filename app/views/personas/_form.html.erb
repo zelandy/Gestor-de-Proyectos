@@ -1,10 +1,10 @@
-<%= simple_form_for(@persona) do |f| %>
+<%= simple_form_for(@persona, :html=>{:class=>'form-horizontal form'}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :nombre %>
-    <%= f.input :ap_paterno %>
-    <%= f.input :ap_materno %>
+    <%= f.input :nombre, :label=>'Nombre', :placeholder=>'Nombre'  %>
+    <%= f.input :ap_paterno, :label=>'Apellido Paterno', :placeholder=>'Apellido Paterno' %>
+    <%= f.input :ap_materno, :label=>'Apellido Materno', :placeholder=>'Apellido Materno'  %>
   </div>
 
   <div class="form-actions">

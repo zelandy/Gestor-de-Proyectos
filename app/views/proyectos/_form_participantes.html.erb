@@ -1,0 +1,24 @@
+<div class="well form-inline">
+	<%= f.link_to_remove "x", :class=>'close' %>
+	<br />
+	<%= f.input :contacto, :as=>'prepend', :input_html=>{:disabled=>'disabled'} ,:prepend=>"#{link_to '#', :class=>'btn triggerFindContacto' do 
+		"<i class='icon-book'></i>".html_safe
+	end}"%>
+	<%= f.input :role, :collection => CharterContacto::ROLES, :include_blank => false %>
+</div>
+<div class="modal hide fade" id="findContacto">
+	 <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h3>Buscar contacto</h3>
+  </div>
+  <div class="modal-body">
+	<div class="input-append">
+		<%= text_field_tag :q %><%= link_to url_for(:controller=>'sphinx', :action=>:contacto), {:remote => true, :class=>'btn submit_link'}  do %>
+			<i class='icon-search'></i>
+		<% end %>
+	</div>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn btn-primary">Save changes</a>
+  </div>
+</div>

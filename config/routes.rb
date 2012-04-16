@@ -1,5 +1,6 @@
 Gestor::Application.routes.draw do
 
+  get "sphinx/contacto"
   resources :empresas
 
   resources :personas

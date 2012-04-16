@@ -1,16 +1,21 @@
 <div class="field">
-   <%= f.input :proyecto_titulo, :label_html=>{:class=>'a'} %>
+   <%= f.input :proyecto_titulo, :label=>'Título', :placeholder=>'Título', :input_html=>{:class=>'span5'} %>
 </div>
 <div class="field">
-   <%= f.input :proyecto_version %>
+   <%= f.input :proyecto_version, :label=>'Versión', :placeholder=>'Versión', :input_html=>{:class=>'span5'} %>
 </div>
 <div class="field">
-   <%= f.input :resumen, :input_html=>{:class=>'expand'} %>
+   <%= f.input :resumen, :input_html=>{:rows=>0, :cols=>nil, :class=>'span5'}, :label=>'Resumen ejecutivo', :placeholder=>'Resumen ejecutivo' %>
 </div>
 <div class="field">
-	<%= f.fields_for :stakeholders do |stake_form| %>
-		<%= stake_form.input :role, :collection => Stakeholder::ROLES %>
-		<%= stake_form.link_to_remove "Quitar" %>
+	<%= f.fields_for :charter_contactos do |part_form| %>
+		<%= render :partial=>'form_participantes', :locals=>{:f => part_form} %>
 	<% end %>
-	<p><%= f.link_to_add "Agregar Stakeholder", :stakeholders %></p>
+	<legend><i class="icon-user" style="vertical-align:baseline;"></i> Participantes</legend>
+	<p>
+		<%= f.link_to_add :charter_contactos, 'data-toggle'.to_sym=>"modal", :class=>'btn pull-right' do %>
+			<i class="icon-plus"></i>
+			Agregar Participante
+		<% end %>
+	</p>
 </div>

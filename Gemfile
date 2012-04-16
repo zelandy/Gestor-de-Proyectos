@@ -16,8 +16,11 @@ gem 'mysql2', '~> 0.2.6'
 gem 'thin'
 gem "nested_form", :git => 'https://github.com/ryanb/nested_form.git'
 gem 'rack-pjax'
-gem "paperclip", "~> 2.7"
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'simple_form'
+gem "jquery-rails"
+gem 'bson'
+gem 'bson_ext'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'

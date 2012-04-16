@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120409210230) do
+ActiveRecord::Schema.define(:version => 20120416030303) do
+
+  create_table "charter_contactos", :force => true do |t|
+    t.integer  "charter_id"
+    t.integer  "contacto_id"
+    t.string   "role"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "charters", :force => true do |t|
     t.string   "proyecto_titulo"
@@ -78,6 +86,10 @@ ActiveRecord::Schema.define(:version => 20120409210230) do
     t.string   "permalynk"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "charter_doc_file_name"
+    t.string   "charter_doc_content_type"
+    t.integer  "charter_doc_file_size"
+    t.datetime "charter_doc_updated_at"
   end
 
   create_table "stakeholders", :force => true do |t|
