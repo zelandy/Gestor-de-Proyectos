@@ -13,6 +13,7 @@ $(document).ready(function(){
 	$('.submit_link').live("ajax:before",function(){
 		$(this).data('params',{q: $('input#q').val().toString() });
 	}).live("ajax:complete", function(et, e){
-    	console.log(e);
+		console.log(e);
+    	window.obj = jQuery.parseJSON(e.responseText);
 	});
 })
