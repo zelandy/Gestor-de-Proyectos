@@ -1,4 +1,4 @@
-<%= simple_nested_form_for(@proyecto, :html=>{:class=>'form-horizontal',:multipart => true}, :remote => true) do |f| %>
+<%= simple_nested_form_for(@proyecto, :html=>{:class=>'form-horizontal'}) do |f| %>
   <% if @proyecto.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@proyecto.errors.count, "error") %> prohibited this proyecto from being saved:</h2>
@@ -15,8 +15,7 @@
   	<%= render :partial=>'form_charter', :locals=>{:f => charter_fields} %>
   <% end %>
   
-  <legend><i class="icon-file" style="vertical-align:baseline;"></i> Archivos Adjuntos</legend>
-  <%= f.input :charter_doc, :label=>'Project Charter<br/>(Word, PDF, Pages)' %>
+
   
   <div class="form-actions">
     <%= link_to 'Cancelar', proyectos_path, :class=>'btn' %>

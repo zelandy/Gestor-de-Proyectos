@@ -1,9 +1,14 @@
 <div class="well form-inline">
 	<%= f.link_to_remove "x", :class=>'close' %>
 	<br />
-	<%= f.input :contacto, :as=>'prepend', :input_html=>{:disabled=>'disabled'} ,:prepend=>"#{link_to '#', :class=>'btn triggerFindContacto' do 
-		"<i class='icon-book'></i>".html_safe
-	end}"%>
+	<div class="control-group">
+		<div class="controls input-prepend">
+    		<%= link_to '#', :class=>'btn triggerFindContacto' do %>
+				<i class='icon-book'></i>
+			<% end %><%= text_field_tag :contacto_nombre, {}, :disabled=>'disabled', :class=>'disabled contacto_nombre' %>
+			<%= f.input :contacto_id, :as=>'hidden' %>
+		</div>
+	</div>
 	<%= f.input :role, :collection => CharterContacto::ROLES, :include_blank => false %>
 </div>
 <div class="modal hide fade" id="findContacto">
@@ -17,8 +22,14 @@
 			<i class='icon-search'></i>
 		<% end %>
 	</div>
+	<div>
+		<br />
+		<table id="query_contacts" class="table table-condensed">
+			
+		</table>
+	</div>
   </div>
   <div class="modal-footer">
-    <a href="#" class="btn btn-primary">Save changes</a>
+    <a href="#" class="btn" rel="no-follow" data-dismiss="modal">Cerrar</a>
   </div>
 </div>
